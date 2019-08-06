@@ -2,7 +2,7 @@
 
 print("############# UPDATING PACKAGES  #############")
 ## Update existing packages
-update.packages(ask = FALSE, checkBuilt = TRUE, repos = "http://cran.us.r-project.org")
+# update.packages(ask = FALSE, checkBuilt = TRUE, repos = "http://cran.us.r-project.org")
 print("############# ALL PACKAGES UPDATED #############")
 print("############# INSTALLING DEVTOOLS  #############")
 ## Check for devtools
