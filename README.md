@@ -92,7 +92,7 @@ by using `sraplus::plot_driors`
 sraplus::plot_driors(catch_only_driors)
 ```
 
-![](C:/Users/JC/Documents/GitHub/test_sraplus/README_files/figure-gfm/c-msy-3-1.svg)<!-- -->
+![](README_files/figure-gfm/c-msy-3-1.svg)<!-- -->
 
 From there, we pass the `driors` object to `sraplus::fit_sraplus`, and
 plot the results using `sraplus::plot_sraplus`. The `engine` argument
@@ -162,7 +162,7 @@ From there, we can generate some standard plots of B/Bmsy
 sraplus::plot_sraplus(catch_only = catch_only_fit, years = catch_only_driors$years)
 ```
 
-![](C:/Users/JC/Documents/GitHub/test_sraplus/README_files/figure-gfm/unnamed-chunk-6-1.svg)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-6-1.svg)<!-- -->
 
 ## Fisheries Management Index and Swept Area Ratio
 
@@ -197,7 +197,7 @@ fmi_sar_driors <- format_driors(
 plot_driors(fmi_sar_driors)
 ```
 
-![](C:/Users/JC/Documents/GitHub/test_sraplus/README_files/figure-gfm/fmi-sar-1-1.svg)<!-- -->
+![](README_files/figure-gfm/fmi-sar-1-1.svg)<!-- -->
 
 We’ll then fit and plot our model. Note that you can pass multiple
 `sraplus` fits, and can name each run whatever you would like.
@@ -214,7 +214,7 @@ plot_sraplus(fmi_sar = fmi_sar_fit,
              years = fmi_sar_driors$years)
 ```
 
-![](C:/Users/JC/Documents/GitHub/test_sraplus/README_files/figure-gfm/fmi-sar-2-1.svg)<!-- -->
+![](README_files/figure-gfm/fmi-sar-2-1.svg)<!-- -->
 
 ## Abundance Index via Maximum Likelihood
 
@@ -247,7 +247,7 @@ sim$pop %>%
   sraplus::theme_sraplus()
 ```
 
-![](C:/Users/JC/Documents/GitHub/test_sraplus/README_files/figure-gfm/sim-index-1-1.svg)<!-- -->
+![](README_files/figure-gfm/sim-index-1-1.svg)<!-- -->
 
 Now, let’s pretend that we have a perfect index of abundance, which is
 just `biomass * 1e-3`. We pass indices to `srplus` inside
@@ -273,7 +273,7 @@ index_driors <- format_driors(
 plot_driors(index_driors)
 ```
 
-![](C:/Users/JC/Documents/GitHub/test_sraplus/README_files/figure-gfm/unnamed-chunk-7-1.svg)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-7-1.svg)<!-- -->
 
 ``` r
 index_fit <- fit_sraplus(driors = index_driors,
@@ -283,7 +283,7 @@ index_fit <- fit_sraplus(driors = index_driors,
 plot_sraplus(index = index_fit,years = index_driors$years)
 ```
 
-![](C:/Users/JC/Documents/GitHub/test_sraplus/README_files/figure-gfm/unnamed-chunk-7-2.svg)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-7-2.svg)<!-- -->
 
 Looks good, now let’s try something a bit trickier.
 
@@ -315,7 +315,7 @@ sim$pop %>%
   sraplus::theme_sraplus()
 ```
 
-![](C:/Users/JC/Documents/GitHub/test_sraplus/README_files/figure-gfm/cpue-fit-1-1.svg)<!-- -->
+![](README_files/figure-gfm/cpue-fit-1-1.svg)<!-- -->
 
 Now suppose we no longer have a perfect index of abundance, but instead
 data on the catch and effort (CPUE\!). But, there are a few problems
@@ -400,7 +400,7 @@ cpue_qslope_fit <- fit_sraplus(driors = cpue_driors,
 plot_sraplus(`CPUE fit no qslope` = cpue_fit, `CPUE fit with qslope` =  cpue_qslope_fit, years = cpue_driors$years)
 ```
 
-![](C:/Users/JC/Documents/GitHub/test_sraplus/README_files/figure-gfm/unnamed-chunk-9-1.svg)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-9-1.svg)<!-- -->
 
 As a final step, we can try adding in some fictional SAR data to our
 fake fishery, just to see how it works. We can weight the SAR data using
@@ -491,7 +491,7 @@ plot_sraplus(`no rocess error and no qslope ` = cpue_fit,
              years = cpue_driors$years)
 ```
 
-![](C:/Users/JC/Documents/GitHub/test_sraplus/README_files/figure-gfm/unnamed-chunk-12-1.svg)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-12-1.svg)<!-- -->
 
 # Session and system info
 
