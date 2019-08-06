@@ -4,3 +4,4 @@ tmb/
 .Rproj.user/*
 .Rproj
 *.Rhistory
+.RData
