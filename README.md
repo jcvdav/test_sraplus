@@ -15,7 +15,7 @@
 
 There should be three branches. Each branch tests the code in a different computer.
 
-There are tests for Windows, Centos and Ubuntu. The README file on each branch shows the results from each test.
+There are tests for Windows, Centos and Ubuntu. The README file on each branch shows the results from each test. Information on the R Session and each system is at the end of each README file too.
 
 --------- 
 
