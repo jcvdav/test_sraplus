@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1565122886905.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "160609A8",
+    "lastKnownWriteTime" : 1565124581,
+    "last_content_update" : 1565124581797,
+    "path" : "~/GitHub/test_sraplus/test.Rmd",
+    "project_path" : "test.Rmd",
+    "properties" : {
+        "cursorPosition" : "336,10",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

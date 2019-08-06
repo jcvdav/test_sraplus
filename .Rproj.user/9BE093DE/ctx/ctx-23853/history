@@ -1,0 +1,28 @@
+Sys.info()
+Sys.info()$sysname
+Sys.info(sysname)
+Sys.info()[sysname]
+a <- Sys.info()
+a["sysname"]
+a[sysname]
+Sys.info()["sysname"]
+Sys.info()
+Sys.info()['version']
+---
+title: "Testing on `r paste0(Sys.info()['sysname']`, Sys.info()['version'])"
+output: html_document
+---
+paste0(Sys.info()['sysname']`, Sys.info()['version'])
+paste0((Sys.info()['sysname']`, Sys.info()['version'])
+paste0(Sys.info()['sysname'], Sys.info()['version'])
+paste(Sys.info()['sysname'], Sys.info()['version'])
+---
+title: "Testing on `r paste(Sys.info()['sysname'], Sys.info()['version'])`"
+output: html_document
+---
+paste(Sys.info()['sysname'], Sys.info()['version'])
+Sys.info()
+Sys.info()['release']
+paste(Sys.info()['sysname'], Sys.info()['release'], Sys.info()['version'])
+remotes::install_github("danovando/sraplus", ref = 'v2.0', build_vignettes = TRUE)
+remotes::install_github("danovando/sraplus", ref = 'v2.0')
