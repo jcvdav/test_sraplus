@@ -13,4 +13,4 @@ if (!require(devtools)){
 remotes::install_github("danovando/sraplus", ref = 'v2.0')
 
 # Run the test
-startR::render_doc(file = "test.Rmd", rmd_dir = ".", output_dir = ".")
+startR::render_doc(file = "README.Rmd", rmd_dir = ".", output_dir = ".")
