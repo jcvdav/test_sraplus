@@ -68,7 +68,7 @@ You can take a look at the information in the `catch_only_driors` object by usin
 sraplus::plot_driors(catch_only_driors)
 ```
 
-![](/home/juancarlos_villader/test_sraplus/README_files/figure-markdown_github/c-msy-3-1.svg)
+![](README_files/figure-markdown_github/c-msy-3-1.svg)
 
 From there, we pass the `driors` object to `sraplus::fit_sraplus`, and plot the results using `sraplus::plot_sraplus`. The `engine` argument specifies how the model will be fit. When not actually "fitting" to anything (rather simply sampling from priors that don't crash the population), we recommend setting engine to "sir". The `draws` argument tells `sraplus` how many draws from the SIR algorithm to generate, and `n_keep` how many draws to sample from the total `draws` iterations. So in this case the SIR algorithm will run 1 million iterations, and sample 2000 entries from those million in proportion to their likelihood.
 
@@ -117,7 +117,7 @@ From there, we can generate some standard plots of B/Bmsy (b\_div\_bmsy), Catch/
 sraplus::plot_sraplus(catch_only = catch_only_fit, years = catch_only_driors$years)
 ```
 
-![](/home/juancarlos_villader/test_sraplus/README_files/figure-markdown_github/unnamed-chunk-6-1.svg)
+![](README_files/figure-markdown_github/unnamed-chunk-6-1.svg)
 
 Fisheries Management Index and Swept Area Ratio
 -----------------------------------------------
@@ -140,7 +140,7 @@ fmi_sar_driors <- format_driors(
 plot_driors(fmi_sar_driors)
 ```
 
-![](/home/juancarlos_villader/test_sraplus/README_files/figure-markdown_github/fmi-sar-1-1.svg)
+![](README_files/figure-markdown_github/fmi-sar-1-1.svg)
 
 We'll then fit and plot our model. Note that you can pass multiple `sraplus` fits, and can name each run whatever you would like.
 
@@ -156,7 +156,7 @@ plot_sraplus(fmi_sar = fmi_sar_fit,
              years = fmi_sar_driors$years)
 ```
 
-![](/home/juancarlos_villader/test_sraplus/README_files/figure-markdown_github/fmi-sar-2-1.svg)
+![](README_files/figure-markdown_github/fmi-sar-2-1.svg)
 
 Abundance Index via Maximum Likelihood
 --------------------------------------
@@ -186,7 +186,7 @@ sim$pop %>%
   sraplus::theme_sraplus()
 ```
 
-![](/home/juancarlos_villader/test_sraplus/README_files/figure-markdown_github/sim-index-1-1.svg)
+![](README_files/figure-markdown_github/sim-index-1-1.svg)
 
 Now, let's pretend that we have a perfect index of abundance, which is just `biomass * 1e-3`. We pass indices to `srplus` inside `format_driors` as `index` and `index_years`, where `index_years` is a vector of the same length of `index` specifying which years index data are available. Well now use Template Model Builder (TMB) to estimate stock status based on this index of abundance. We'll add in some priors on the growth rate and the shape of the Pella-Tomlinson model (1.01 roughly corresponds to a Fox model, where Bmsy/K ~= 0.4). Note that we now set `engine = "tmb"` to fit the model via maximum likelihood using TMB.
 
@@ -203,7 +203,7 @@ index_driors <- format_driors(
 plot_driors(index_driors)
 ```
 
-![](/home/juancarlos_villader/test_sraplus/README_files/figure-markdown_github/unnamed-chunk-7-1.svg)
+![](README_files/figure-markdown_github/unnamed-chunk-7-1.svg)
 
 ``` r
 index_fit <- fit_sraplus(driors = index_driors,
@@ -212,7 +212,7 @@ index_fit <- fit_sraplus(driors = index_driors,
 plot_sraplus(index = index_fit,years = index_driors$years)
 ```
 
-![](/home/juancarlos_villader/test_sraplus/README_files/figure-markdown_github/unnamed-chunk-7-2.svg)
+![](README_files/figure-markdown_github/unnamed-chunk-7-2.svg)
 
 Looks good, now let's try something a bit trickier.
 
@@ -244,7 +244,7 @@ sim$pop %>%
   sraplus::theme_sraplus()
 ```
 
-![](/home/juancarlos_villader/test_sraplus/README_files/figure-markdown_github/cpue-fit-1-1.svg)
+![](README_files/figure-markdown_github/cpue-fit-1-1.svg)
 
 Now suppose we no longer have a perfect index of abundance, but instead data on the catch and effort (CPUE!). But, there are a few problems with these CPUE data. First, we know from the simulation that q is increasing over time, so simply treating Catch/Effort as an index of abundance will be biased (since a unit of effort in the past is not the same as a unit of effort in the present). Second, we need to account for diminishing returns from increasing amounts of effort, and in-season losses to natural mortality. `sraplus` provides some support to these problems. `sraplus` will estimate a q. If desired it allows the user to either specify an assumed slope in catchability (where \(q_t = q_{t-1} \times qslope\)), or to attempt to estimate `qslope` directly. Second, given values of q and qslope (and estimates of natural mortality either supplied by the user or drawn from `FishLife`), `sraplus` uses the Baranov equation to translate effort into an effective fishing mortality rate.
 
@@ -302,7 +302,7 @@ cpue_qslope_fit <- fit_sraplus(driors = cpue_driors,
 plot_sraplus(`CPUE fit no qslope` = cpue_fit, `CPUE fit with qslope` =  cpue_qslope_fit, years = cpue_driors$years)
 ```
 
-![](/home/juancarlos_villader/test_sraplus/README_files/figure-markdown_github/unnamed-chunk-9-1.svg)
+![](README_files/figure-markdown_github/unnamed-chunk-9-1.svg)
 
 As a final step, we can try adding in some fictional SAR data to our fake fishery, just to see how it works. We can weight the SAR data using the `sar_sd` input. Leaving `sar_sd = NA` uses the srandard deviation from the posterior predictive of the fitted relationahip between SAR and U/Umsy contained in the model. In other words, setting sar\_sd = NA lets the data tell you how much weight to assign to the SAR data. You can however overwrite this if desired and pass a stronger weight to the SAR data if desired.
 
@@ -385,7 +385,7 @@ plot_sraplus(`no rocess error and no qslope ` = cpue_fit,
              years = cpue_driors$years)
 ```
 
-![](/home/juancarlos_villader/test_sraplus/README_files/figure-markdown_github/unnamed-chunk-12-1.svg)
+![](README_files/figure-markdown_github/unnamed-chunk-12-1.svg)
 
 Session and system info
 =======================
