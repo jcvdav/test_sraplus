@@ -1,12 +1,13 @@
 ---
 title: "Testing on `r paste(Sys.info()['sysname'], Sys.info()['release'], Sys.info()['version'])`"
-output: html_document
+output: github_document
 ---
 
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
   eval = TRUE,
   collapse = TRUE,
+  comment = "#>",
   message = FALSE,
   warnings = FALSE,
   dev = "svg"
